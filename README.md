@@ -1,4 +1,4 @@
-gulp-twoside is a [Gulp](https://github.com/gulpjs/gulp) extension to add wrap files for twoside.js module.  [Gulp is a streaming build system](https://github.com/gulpjs/gulp) utilizing [node.js](http://nodejs.org/).
+gulp-twoside is a [Gulp](https://github.com/gulpjs/gulp) extension to add wrap files for [twoside.js](https://github.com/chaosim) module.  [Gulp is a streaming build system](https://github.com/gulpjs/gulp) utilizing [node.js](http://nodejs.org/).
 
 ```javascript
 var twoside = require('gulp-twoside');
@@ -10,15 +10,15 @@ var twoside = require('gulp-twoside');
 var twoside = require('gulp-twoside');
 
 gulp.src('./foo/*.js')
-  .pipe(twoside('Hello'))
+  .pipe(twoside('foo', 'foo'))
   .pipe(gulp.dest('./dist/')
 
 gulp.src('./foo/*.js')
-  .pipe(twoside('Hello <%= name %>\n', { name : 'World'} ))
+  .pipe(twoside('foo', 'bar', { hello : 'halo'} ))
   .pipe(gulp.dest('./dist/')
 
-gulp.src('./foo/*.js')
-  .pipe(twoside('Hello ${name}\n', { name : 'World'} ))
+gulp.src('./foo/bar/*.js')
+  .pipe(twoside('foo/bar', 'bar', { hello : 'halo', only_wrap_for_browser: true} ))
   .pipe(gulp.dest('./dist/')
 
 
@@ -43,6 +43,10 @@ The package name, it will replace the __dirname+basePath part of file.path, as t
 
 #### pathMap
 if the hashkey (generated as above) is an entry of pathMap, then the hashMap[hashkey] will become the real module hash key.
+
+an option can be set in pathMap:
+
+only_wrap_for_browser: true: wrapped file will work normally in browser, but not work in nodejs.
 
 See the source code for more information.
 
