@@ -1,0 +1,33 @@
+{
+  "name": "gulp-twoside",
+  "version": "0.1.0",
+  "description": "Gulp extension to add wrap .js file for twoside.js module.",
+  "main": "./index.js",
+  "proxy": null,
+  "https-proxy": null,
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chaosim/gulp-twoside.git"
+  },
+  "keywords": [
+    "twoside",
+    "gulpplugin"
+  ],
+  "author": {
+    "name": "Simeon.chaos@gmail.com",
+    "url": "http://github.com/chaosim"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chaosim/gulp-twoside/issues"
+  },
+  "dependencies": {
+    "event-stream": "*",
+    "gulp-util": "*"
+  },
+  "devDependencies": {
+  }
+}
