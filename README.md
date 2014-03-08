@@ -20,7 +20,7 @@ gulp.src('./foo/*.js')
 gulp.src('./foo/bar/*.js')
   .pipe(twoside('foo/bar', 'bar', { hello : 'halo', only_wrap_for_browser: true} ))
   .pipe(gulp.dest('./dist/')
-
+```
 
 ## API
 
